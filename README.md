@@ -52,12 +52,13 @@ The system has three main components:
 4. "Run The Backend"
    Running the Backend (FastAPI)
 5. "Run the Frontend"
-   venv\Scripts\activate
-   uvicorn backend.main:app --host 0.0.0.0 --port 8001 --reload
-6."Runn the Frontend "
-  "open new terminal"
-  venv\Scripts\activate
-  streamlit run frontend/app.py
+      venv\Scripts\activate
+      uvicorn backend.main:app --host 0.0.0.0 --port 8001 --reload
+6. "Runn the Frontend "
+   "open new terminal"
+     venv\Scripts\activate
+     streamlit run frontend/app.py
+
 
 
 
