@@ -41,11 +41,11 @@ The system has three main components:
    - **SimpleRAG**: returns curated IoT/Blockchain/ML anomaly detection snippets  
 
 
-RUN THE PROJECT 
+# RUN THE PROJECT 
 1--> "Create and activate virtual environment"
    python -m venv venv
-   venv\Scripts\activate   # on Windows
-   # source venv/bin/activate  # on Linux/Mac 
+   venv\Scripts\activate  
+   
 2--> "Install dependencies"
    Install dependencies
 3--> "Fine-tune TinyLlama with LoRA"
@@ -59,6 +59,7 @@ RUN THE PROJECT
       "open new terminal"
       venv\Scripts\activate
       streamlit run frontend/app.py
+
 
 
 
