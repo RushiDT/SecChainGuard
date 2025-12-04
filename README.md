@@ -40,28 +40,7 @@ The system has three main components:
    - **LLMWrapper**: loads TinyLlama base model + LoRA adapters  
    - **SimpleRAG**: returns curated IoT/Blockchain/ML anomaly detection snippets  
 
-PROJECT STRUCTURE
-secchainguard/
-├─ backend/
-│  ├─ __init__.py
-│  ├─ llm.py              # Base model + LoRA loading + generate()
-│  ├─ rag.py              # SimpleRAG with curated IoT/BC/ML contexts
-│  ├─ main.py             # FastAPI app, /analyze endpoint
-│
-├─ data_preparation/
-│  ├─ finetune_tinyllama_lora.py   # LoRA fine-tuning script
-│
-├─ data/
-│  ├─ iot_blockchain_ml.jsonl      # Training data (instruction/input/output)
-│
-├─ fine_tuned_models/
-│  ├─ tinyllama-iot-sec-lora/      # LoRA adapters (ignored via .gitignore)
-│
-├─ frontend/
-│  ├─ app.py               # Streamlit UI
-│
-├─ requirements.txt
-├─ README.md
-└─ LICENSE
+
+
 
 
