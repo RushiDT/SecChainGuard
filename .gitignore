@@ -1,0 +1,33 @@
+# Virtual env
+venv/
+.env
+*.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Model weights and LoRA adapters
+fine_tuned_models/
+*.safetensors
+*.bin
+*.pt
+
+# HuggingFace cache
+~/.cache/huggingface/
+huggingface/
+cache/
+
+# Streamlit stuff
+.streamlit/
+
+# Logs
+*.log
+
+# Jupyter/IPython
+.ipynb_checkpoints/
+
+# OS junk
+.DS_Store
+Thumbs.db
