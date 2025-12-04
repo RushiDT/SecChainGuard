@@ -43,21 +43,22 @@ The system has three main components:
 
 # RUN THE PROJECT 
 1. "Create and activate virtual environment"
-   python -m venv venv
-   venv\Scripts\activate     
+   -python -m venv venv
+   -venv\Scripts\activate     
 2. "Install dependencies"
-   Install dependencies
+   -Install dependencies
 3. "Fine-tune TinyLlama with LoRA"
-   python data_preparation/finetune_tinyllama_lora.py
+   -python data_preparation/finetune_tinyllama_lora.py
 4. "Run The Backend"
-   Running the Backend (FastAPI)
+   -Running the Backend (FastAPI)
 5. "Run the Frontend"
-      venv\Scripts\activate
-      uvicorn backend.main:app --host 0.0.0.0 --port 8001 --reload
+      -venv\Scripts\activate
+      -uvicorn backend.main:app --host 0.0.0.0 --port 8001 --reload
 6. "Runn the Frontend "
    "open new terminal"
-     venv\Scripts\activate
-     streamlit run frontend/app.py
+     -venv\Scripts\activate
+     -streamlit run frontend/app.py
+
 
 
 
