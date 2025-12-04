@@ -36,24 +36,32 @@ The system has three main components:
    - Combines user input + retrieved context into a structured prompt  
    - Calls the LLM wrapper to generate a 4-section answer  
 
-3. **LLM + RAG Layer**  
+3. *LLM + RAG Layer* 
    - **LLMWrapper**: loads TinyLlama base model + LoRA adapters  
    - **SimpleRAG**: returns curated IoT/Blockchain/ML anomaly detection snippets  
 
-### 🧩 High-level Architecture Diagram (Mermaid)
+PROJECT STRUCTURE
+secchainguard/
+├─ backend/
+│  ├─ __init__.py
+│  ├─ llm.py              # Base model + LoRA loading + generate()
+│  ├─ rag.py              # SimpleRAG with curated IoT/BC/ML contexts
+│  ├─ main.py             # FastAPI app, /analyze endpoint
+│
+├─ data_preparation/
+│  ├─ finetune_tinyllama_lora.py   # LoRA fine-tuning script
+│
+├─ data/
+│  ├─ iot_blockchain_ml.jsonl      # Training data (instruction/input/output)
+│
+├─ fine_tuned_models/
+│  ├─ tinyllama-iot-sec-lora/      # LoRA adapters (ignored via .gitignore)
+│
+├─ frontend/
+│  ├─ app.py               # Streamlit UI
+│
+├─ requirements.txt
+├─ README.md
+└─ LICENSE
 
-```mermaid
-flowchart LR
-    User[User in Browser] -->|fills form| StreamlitUI[Streamlit Frontend]
 
-    StreamlitUI -->|POST /analyze<br/>query + system_description| FastAPI[FastAPI Backend]
-
-    FastAPI -->|query| RAG[SimpleRAG<br/>(curated contexts)]
-    RAG -->|top-k contexts| FastAPI
-
-    FastAPI -->|prompt (query + system + context)| LLMWrapper[LLM Wrapper]
-    LLMWrapper -->|generate()| TinyLlama[TinyLlama 1.1B<br/>+ LoRA Adapters]
-
-    TinyLlama -->|answer| LLMWrapper --> FastAPI
-    FastAPI -->|answer + retrieved_contexts| StreamlitUI
-    StreamlitUI -->|display analysis + RAG| User
